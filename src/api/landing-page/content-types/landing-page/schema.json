@@ -1,0 +1,21 @@
+{
+  "kind": "singleType",
+  "collectionName": "landing_pages",
+  "info": {
+    "singularName": "landing-page",
+    "pluralName": "landing-pages",
+    "displayName": "LandingPage"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "slogan_1": {
+      "type": "string"
+    },
+    "slogan_2": {
+      "type": "string"
+    }
+  }
+}
