@@ -1,0 +1,41 @@
+{
+  "kind": "collectionType",
+  "collectionName": "laundry_services",
+  "info": {
+    "singularName": "laundry-service",
+    "pluralName": "laundry-services",
+    "displayName": "laundryService",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "nameService": {
+      "type": "string"
+    },
+    "priceService": {
+      "type": "integer"
+    },
+    "order_services": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::order-service.order-service",
+      "mappedBy": "laundry_service"
+    },
+    "serviceDescription": {
+      "type": "text"
+    },
+    "pictService": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": true
+    }
+  }
+}
