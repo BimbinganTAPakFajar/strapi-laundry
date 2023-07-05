@@ -12,12 +12,6 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "users_permissions_users": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "plugin::users-permissions.user",
-      "mappedBy": "order_service"
-    },
     "laundry_service": {
       "type": "relation",
       "relation": "manyToOne",
@@ -30,11 +24,26 @@
     "pickupDate": {
       "type": "datetime"
     },
-    "deliveryDate": {
-      "type": "datetime"
-    },
     "totalPrice": {
       "type": "integer"
+    },
+    "address": {
+      "type": "text"
+    },
+    "phoneNumber": {
+      "type": "string"
+    },
+    "UUID": {
+      "type": "string"
+    },
+    "email": {
+      "type": "email"
+    },
+    "name": {
+      "type": "string"
+    },
+    "isReady": {
+      "type": "boolean"
     }
   }
 }

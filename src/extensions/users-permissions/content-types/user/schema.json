@@ -62,12 +62,6 @@
       "target": "plugin::users-permissions.role",
       "inversedBy": "users",
       "configurable": false
-    },
-    "order_service": {
-      "type": "relation",
-      "relation": "manyToOne",
-      "target": "api::order-service.order-service",
-      "inversedBy": "users_permissions_users"
     }
   }
 }
