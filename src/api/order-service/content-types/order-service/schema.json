@@ -19,13 +19,15 @@
       "inversedBy": "order_services"
     },
     "weight": {
-      "type": "integer"
+      "type": "integer",
+      "default": 0
     },
     "pickupDate": {
       "type": "datetime"
     },
     "totalPrice": {
-      "type": "integer"
+      "type": "integer",
+      "default": 0
     },
     "address": {
       "type": "text"
