@@ -19,22 +19,53 @@ module.exports = {
         id,
         { populate: "*" }
       );
-
       // console.log(idLayanan);
       let total = 0;
-      if (idLayanan.laundry_service.id === 4 && idLayanan.totalPrice === 0) {
-        total = idLayanan.weight * 2000;
-        console.log("YES");
-        const newOrder = await strapi.entityService.update(
-          "api::order-service.order-service",
-          id,
-          {
-            data: {
-              totalPrice: total,
-            },
-          }
-        );
+      let multiplier;
+      if (idLayanan.laundry_service.id === 1 && idLayanan.totalPrice === 0) {
+        multiplier = 10000;
+      } else if (
+        idLayanan.laundry_service.id === 2 &&
+        idLayanan.totalPrice === 0
+      ) {
+        multiplier = 12000;
+      } else if (
+        idLayanan.laundry_service.id === 3 &&
+        idLayanan.totalPrice === 0
+      ) {
+        multiplier = 15000;
+      } else if (
+        idLayanan.laundry_service.id === 4 &&
+        idLayanan.totalPrice === 0
+      ) {
+        multiplier = 7000;
       }
+      total = idLayanan.weight * multiplier;
+      console.log("YES");
+      const newOrder = await strapi.entityService.update(
+        "api::order-service.order-service",
+        id,
+        {
+          data: {
+            totalPrice: total,
+          },
+        }
+      );
+
+      // if (idLayanan.laundry_service.id === 4 && idLayanan.totalPrice === 0) {
+      //   total = idLayanan.weight * 2000;
+      //   console.log("YES");
+      //   const newOrder = await strapi.entityService.update(
+      //     "api::order-service.order-service",
+      //     id,
+      //     {
+      //       data: {
+      //         totalPrice: total,
+      //       },
+      //     }
+      //   );
+      // }
+
       // send email to customer
       const transporter = nodemailer.createTransport({
         service: "gmail",
