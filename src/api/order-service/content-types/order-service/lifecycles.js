@@ -70,21 +70,21 @@ module.exports = {
       const transporter = nodemailer.createTransport({
         service: "gmail",
         auth: {
-          user: "ezie2001@gmail.com",
-          pass: "cqhkapusilgelnke",
+          user: "mylaundry321@gmail.com",
+          pass: "nxwpjmpfwkcdvzow",
         },
       });
       const mailerOptions = {
-        from: "ezie2001@gmail.com",
-        to: "ajirindra1987@gmail.com", // INI PERLU DIGANTI KE EMAIL DB USER NANTI
-        subject: "Order Confirmation",
+        from: "mylaundry321@gmail.com",
+        to: idLayanan.email, // INI PERLU DIGANTI KE EMAIL DB USER NANTI
+        subject: "Konfirmasi Pemesanan",
         html: `<a href="http://laundry-app-ta.my.id/order/${idLayanan.UUID}" target="_blank">Click link to pay</a>`,
       };
       transporter.sendMail(mailerOptions, function (error, info) {
         if (error) {
           console.log(error);
         } else {
-          console.log(info.response);
+          console.log(info.response, "Email Terkirim");
         }
       });
     }
