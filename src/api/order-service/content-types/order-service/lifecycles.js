@@ -76,9 +76,29 @@ module.exports = {
       });
       const mailerOptions = {
         from: "mylaundry321@gmail.com",
-        to: idLayanan.email, // INI PERLU DIGANTI KE EMAIL DB USER NANTI
+        to: idLayanan.email,
         subject: "Konfirmasi Pemesanan",
-        html: `<a href="http://laundry-app-ta.my.id/order/${idLayanan.UUID}" target="_blank">Click link to pay</a>`,
+        html: `
+        <h1 style="text-align: center;">Konfirmasi Pembayaran</h1>
+        <table style="width: 100%; border-collapse: collapse;">
+        <tr>
+        <th style="padding: 8px; text-align: left; border-bottom: 1px solid #ddd;">Nama Pemesan</th>
+        <th style="padding: 8px; text-align: left; border-bottom: 1px solid #ddd;">Servis</th>
+        <th style="padding: 8px; text-align: left; border-bottom: 1px solid #ddd;">Berat Laundry</th>
+        <th style="padding: 8px; text-align: left; border-bottom: 1px solid #ddd;">Tanggal Pengambilan</th>
+        <th style="padding: 8px; text-align: left; border-bottom: 1px solid #ddd;">Total Harga</th>
+        <th style="padding: 8px; text-align: left; border-bottom: 1px solid #ddd;">Id Pembayaran</th>
+        </tr>
+        <tr>
+        <td style="padding: 8px; text-align: left; border-bottom: 1px solid #ddd;">${idLayanan.name}</td>
+        <td style="padding: 8px; text-align: left; border-bottom: 1px solid #ddd;">${idLayanan.laundry_service.nameService}</td>
+        <td style="padding: 8px; text-align: left; border-bottom: 1px solid #ddd;">${idLayanan.weight}</td>
+        <td style="padding: 8px; text-align: left; border-bottom: 1px solid #ddd;">${idLayanan.pickupDate}</td>
+        <td style="padding: 8px; text-align: left; border-bottom: 1px solid #ddd;">${idLayanan.totalPrice}</td>
+        <td style="padding: 8px; text-align: left; border-bottom: 1px solid #ddd;">${idLayanan.UUID}</td>
+        </tr>
+        </table>
+        <a style="border-top: 8px; font-weight:bold" href="http://laundry-app-ta.my.id/order/${idLayanan.UUID}" target="_blank">Click link to pay</a>`,
       };
       transporter.sendMail(mailerOptions, function (error, info) {
         if (error) {
