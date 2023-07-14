@@ -52,20 +52,6 @@ module.exports = {
         }
       );
 
-      // if (idLayanan.laundry_service.id === 4 && idLayanan.totalPrice === 0) {
-      //   total = idLayanan.weight * 2000;
-      //   console.log("YES");
-      //   const newOrder = await strapi.entityService.update(
-      //     "api::order-service.order-service",
-      //     id,
-      //     {
-      //       data: {
-      //         totalPrice: total,
-      //       },
-      //     }
-      //   );
-      // }
-
       // send email to customer
       const transporter = nodemailer.createTransport({
         service: "gmail",
@@ -74,6 +60,9 @@ module.exports = {
           pass: "nxwpjmpfwkcdvzow",
         },
       });
+
+      // setTimeout(transporter, 2000);
+
       const mailerOptions = {
         from: "mylaundry321@gmail.com",
         to: idLayanan.email,
@@ -98,7 +87,7 @@ module.exports = {
         <td style="padding: 8px; text-align: left; border-bottom: 1px solid #ddd;">${idLayanan.UUID}</td>
         </tr>
         </table>
-        <a style="border-top: 8px; font-weight:bold" href="http://laundry-app-ta.my.id/order/${idLayanan.UUID}" target="_blank">Click link to pay</a>`,
+        <a style="padding-top: 8px; font-weight:bold" href="http://laundry-app-ta.my.id/order/${idLayanan.UUID}" target="_blank">Click link to pay</a>`,
       };
       transporter.sendMail(mailerOptions, function (error, info) {
         if (error) {
