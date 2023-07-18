@@ -87,7 +87,7 @@ module.exports = {
         <td style="padding: 8px; text-align: left; border-bottom: 1px solid #ddd;">${idLayanan.UUID}</td>
         </tr>
         </table>
-        <a style="padding-top: 8px; font-weight:bold" href="http://laundry-app-ta.my.id/order/${idLayanan.UUID}" target="_blank">Click link to pay</a>`,
+        <a style="padding-top: 8px; font-weight:bold" href="http://mylaundry.online/order/${idLayanan.UUID}" target="_blank">Click link to pay</a>`,
       };
       transporter.sendMail(mailerOptions, function (error, info) {
         if (error) {
