@@ -23,22 +23,22 @@ module.exports = {
       let total = 0;
       let multiplier;
       if (idLayanan.laundry_service.id === 1 && idLayanan.totalPrice === 0) {
-        multiplier = 10000;
+        multiplier = 3000;
       } else if (
         idLayanan.laundry_service.id === 2 &&
         idLayanan.totalPrice === 0
       ) {
-        multiplier = 12000;
+        multiplier = 4000;
       } else if (
         idLayanan.laundry_service.id === 3 &&
         idLayanan.totalPrice === 0
       ) {
-        multiplier = 15000;
+        multiplier = 5000;
       } else if (
         idLayanan.laundry_service.id === 4 &&
         idLayanan.totalPrice === 0
       ) {
-        multiplier = 7000;
+        multiplier = 4000;
       }
       total = idLayanan.weight * multiplier;
       console.log("YES");
