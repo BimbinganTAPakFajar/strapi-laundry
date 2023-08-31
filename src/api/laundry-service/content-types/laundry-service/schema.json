@@ -28,14 +28,18 @@
       "type": "text"
     },
     "pictService": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": true
+      ]
+    },
+    "formLink": {
+      "type": "text"
     }
   }
 }
